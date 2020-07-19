@@ -5,12 +5,38 @@
     <title>Index</title>
 </head>
 <body>
-<pre>
-    {{ global_summary }}
-</pre>
-<pre>
-    {{ result }}
-</pre>
+<div class="container">
+    <div class="caed-body">
+        <h4 class="card-title">New Confirmed</h4>
+        <p class="card-text">{{ global_summary.NewConfirmed}}</p>
+    </div>
+    <div class="caed-body">
+        <h4 class="card-title">TotalConfirmed</h4>
+        <p class="card-text">{{ global_summary.TotalConfirmed}}</p>
+    </div>
+    <div class="caed-body">
+        <h4 class="card-title">NewDeaths</h4>
+        <p class="card-text">{{ global_summary.NewDeaths}}</p>
+    </div>
+     <div class="caed-body">
+        <h4 class="card-title">New Confirmed</h4>
+        <p class="card-text">{{ global_summary.NewConfirmed}}</p>
+    </div>
+     <div class="caed-body">
+        <h4 class="card-title">Total Deaths</h4>
+        <p class="card-text">{{ global_summary.TotalDeaths}}</p>
+    </div>
+     <div class="caed-body">
+        <h4 class="card-title">New Recovered</h4>
+        <p class="card-text">{{ global_summary.NewRecovered}}</p>
+    </div>
+     <div class="caed-body">
+        <h4 class="card-title">Total Recovered</h4>
+        <p class="card-text">{{ global_summary.TotalRecovered}}</p>
+    </div>
+    </div>
+</div>
+
 
 </body>
 </html>
