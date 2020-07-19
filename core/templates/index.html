@@ -3,43 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .color1 {
+          background-color: blue;
+          color: white;
+        }
+        .color2 {
+           background-color: #FF3E40;
+           color: white;
+        }
+        .color3 {
+           background-color: #BB3227;
+           color: white;
+        }
+        .color4 {
+           background-color: #2ecc72;
+           color: white;
+        }
+        .color5 {
+           background-color: #26ae60;
+           color: white;
+        }
+        .number {
+          font-weight: 300;
+          font-size: 40px;
+          float: right;
+        }
+    </style>
 </head>
-<body>
-<div class="container">
-    <div class="caed-body">
-        <h4 class="card-title">New Confirmed</h4>
-        <p class="card-text">{{ global_summary.NewConfirmed}}</p>
+<body class="p-3">
+<br>
+<h1 class="display-7">Covid-19 - Global Data</h1>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col m-2 color1">
+        <div class="card-body">
+            <h4 class="card-title">New Confirmed</h4>
+            <p class="card-text number">{{ global_summary.NewConfirmed}}</p>
+        </div>
     </div>
-    <div class="caed-body">
-        <h4 class="card-title">TotalConfirmed</h4>
-        <p class="card-text">{{ global_summary.TotalConfirmed}}</p>
+    <div class="card col m-2 color2">
+        <div class="card-body">
+            <h4 class="card-title">Total Confirmed</h4>
+            <p class="card-text number">{{ global_summary.TotalConfirmed}}</p>
+        </div>
     </div>
-    <div class="caed-body">
-        <h4 class="card-title">NewDeaths</h4>
-        <p class="card-text">{{ global_summary.NewDeaths}}</p>
+     <div class="card col m-2 color3">
+         <div class="card-body">
+             <h4 class="card-title">New Deaths</h4>
+             <p class="card-text number">{{ global_summary.NewDeaths}}</p>
+         </div>
+     </div>
+     <div class="card col m-2 color4">
+         <div class="card-body">
+             <h4 class="card-title">New Confirmed</h4>
+             <p class="card-text number">{{ global_summary.NewConfirmed}}</p>
+         </div>
+     </div>
+      <div class="card col m-2 color3">
+          <div class="card-body">
+              <h4 class="card-title">Total Deaths</h4>
+              <p class="card-text number">{{ global_summary.TotalDeaths}}</p>
+          </div>
+      </div>
+      <div class="card col m-2 color4">
+          <div class="card-body">
+              <h4 class="card-title">New Recovered</h4>
+              <p class="card-text number">{{ global_summary.NewRecovered}}</p>
+          </div>
+      </div>
+      <div class="card col m-2 color5">
+          <div class="card-body">
+              <h4 class="card-title">Total Recovered</h4>
+              <p class="card-text number">{{ global_summary.TotalRecovered}}</p>
+          </div>
+      </div>
     </div>
-     <div class="caed-body">
-        <h4 class="card-title">New Confirmed</h4>
-        <p class="card-text">{{ global_summary.NewConfirmed}}</p>
-    </div>
-     <div class="caed-body">
-        <h4 class="card-title">Total Deaths</h4>
-        <p class="card-text">{{ global_summary.TotalDeaths}}</p>
-    </div>
-     <div class="caed-body">
-        <h4 class="card-title">New Recovered</h4>
-        <p class="card-text">{{ global_summary.NewRecovered}}</p>
-    </div>
-     <div class="caed-body">
-        <h4 class="card-title">Total Recovered</h4>
-        <p class="card-text">{{ global_summary.TotalRecovered}}</p>
-    </div>
-    <table>
+    <h4 class="alert alert-light border rounded">Country Wise summary</h4>
+    <table class="table">
         <thead>
         <tr>
              <th>Sno.</th>
              <th>Country</th>
-            <th>Total Confirmed</th>
+             <th>Total Confirmed</th>
              <th>Total death</th>
              <th>Total Recovered</th>
         </tr>
@@ -47,15 +95,18 @@
         <tbody>
         {% for c in countries %}
         <tr>
-            <td>{{ forloop.counter}}</td>
-            <td>{{ c.Country}}</td>
-            <td>{{ c.TotalConfirmed}}</td>
-            <td>{{ c.TotalDeaths}}</td>
-            <td>{{ c.TotalRecovered}}</td>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ c.Country }}</td>
+            <td>{{ c.TotalConfirmed }}</td>
+            <td>{{ c.TotalDeaths }}</td>
+            <td>{{ c.TotalRecovered }}</td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
