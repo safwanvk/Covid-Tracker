@@ -34,9 +34,28 @@
         <h4 class="card-title">Total Recovered</h4>
         <p class="card-text">{{ global_summary.TotalRecovered}}</p>
     </div>
-    </div>
+    <table>
+        <thead>
+        <tr>
+             <th>Sno.</th>
+             <th>Country</th>
+            <th>Total Confirmed</th>
+             <th>Total death</th>
+             <th>Total Recovered</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for c in countries %}
+        <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{ c.Country}}</td>
+            <td>{{ c.TotalConfirmed}}</td>
+            <td>{{ c.TotalDeaths}}</td>
+            <td>{{ c.TotalRecovered}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
-
-
 </body>
 </html>
